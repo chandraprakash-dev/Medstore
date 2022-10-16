@@ -1,0 +1,50 @@
+.shop-card {
+    background: skyblue;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.heading {
+    height: 50px;
+}
+
+.itemName {
+    color: black;
+}
+
+.shopItemImage {
+    background: white;
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.shopItemImage img{
+    height: auto;
+    max-width: 100%;
+}
+
+.rarity {
+    margin: 10px;
+}
+
+.ratings {
+    margin: 10px;
+    display: flex;
+    align-self: stretch;
+    justify-content: space-around;
+}
+
+.price {
+    margin: 10px;
+    display: flex;
+    align-self: stretch;
+    justify-content: space-around;
+}
+
+.changeQuantity {
+    display: flex;
+}

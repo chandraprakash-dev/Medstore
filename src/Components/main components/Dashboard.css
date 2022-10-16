@@ -1,0 +1,14 @@
+.dashboard {
+    height: 100px;
+    flex: 2;
+    text-align: center;
+}
+
+.active-transactions {
+    background: lightgray;
+    margin: 20px auto;
+    width: 60%;
+    height: 50%;
+}
+
+

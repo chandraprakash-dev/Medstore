@@ -1,0 +1,28 @@
+.cart {
+    width: 80%;
+    margin: 0 auto;
+    flex: 2;
+    text-align: center;
+    background: gold;
+}
+
+.cartList {
+}
+
+.cart-total {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    justify-items: center;
+}
+
+.total {
+    justify-self: right;
+}
+
+.buyButton {
+    margin-top: 50px;
+    font-size: large;
+    padding: 15px;
+    border-radius: 20px;
+}

@@ -1,0 +1,35 @@
+footer {
+    background: lightcoral;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: normal;
+    margin: 0 0 5px 10px;
+}
+
+.shopHeader {
+    font-size: 1.5em;
+}
+
+.shopping-bag {
+    margin-right: 20px;
+    position: relative;
+}
+
+span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -3px;
+    margin-left: -4px;
+    color: #2525c4;
+}
+
+footer a {
+    color: white;
+}

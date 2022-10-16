@@ -1,0 +1,13 @@
+.placeOrder {
+    flex: 2;
+    width: 80%;
+    background: gold;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.placeOrder button {
+    padding: 10px;
+    display: block;
+    margin: 20px auto;
+}
