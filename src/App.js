@@ -27,20 +27,21 @@ function App() {
 
   const addToCart = (item, quantity) => {
     item.quantity = quantity;
-    for(let i = 0; i < cartItems.length; i ++) {
-      if(item === cartItems[i]) return;
+    let newItems = cartItems.slice();
+
+    let flag = false;
+    for(let i = 0; i < newItems.length; i ++) {
+      if(item.id === newItems[i].id) {
+        newItems[i].quantity = quantity;
+        flag = true;
+        break;
+      }
     }
-    console.log(item);
-    setCartItems([...cartItems, item]);
-    console.log(cartItems);
+    if(!flag)  newItems.push(item);
+    setCartItems(newItems);
   }
 
-  const clearCart = () => {
-    console.log('in the clear');
-    setCartItems([]);
-  }
-
-  const cartCount = cartItems.reduce((acc, cur) => acc + cur.quantity, 0);
+  const cartCount = cartItems.reduce((acc, cur) => acc + +cur.quantity, 0);
   const total = cartItems.reduce((acc, cur) => acc + (cur.quantity * cur.mrp), 0)
 
   return (

@@ -12,22 +12,13 @@ function ShopItemDetails(props) {
   const name = props.match.params.name;
 
   const itemIndex = cartItems.findIndex(cartItem => cartItem.name === name);
-  const cartItem = cartItems[itemIndex];
 
   const handleQuantityChange= (e) => {
     setQuantity(e.target.value);
   }
 
   const [quantity, setQuantity] = useState(1);
-  const quantityComponent = itemIndex >= 0 ?
-    <div>
-      <div>
-        <Link to="/cart">
-          <button>Go to cart</button>
-        </Link>
-      </div>
-    </div>
-    :
+  const quantityComponent =
     <div>
       <label htmlFor="quantity">Quantity</label>
       <select value={quantity} onChange={handleQuantityChange} id="quantity" name="quantity">

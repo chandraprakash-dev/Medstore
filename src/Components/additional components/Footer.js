@@ -6,25 +6,25 @@ function Footer(props) {
   return (
     <footer>
       <Link to="/">
-        <i className="fa fa-home fa-2x"></i>
+        <i className="fa fa-home fa-2x"/>
       </Link>
       <div className="shopHeader">
         <Link to="/shop">
-          <i className="fa fa-medkit fa-2x"></i>
+          <i className="fa fa-medkit fa-2x"/>
         </Link>
       </div>
       <div className="lab">
         <Link to='/lab'>
-          <i className="fa fa-flask fa-2x"></i>
+          <i className="fa fa-flask fa-2x"/>
         </Link>
       </div>
       <div className="doctor">
         <Link to="/doctor">
-          <i className="fa fa-user-md fa-2x"></i></Link>
+          <i className="fa fa-user-md fa-2x"/></Link>
       </div>
       <div className="shopping-bag">
         <Link to="/cart">
-          <i className="fas fa-shopping-bag fa-2x"></i>
+          <i className="fas fa-shopping-bag fa-2x"/>
           <span>{props.cartCount}</span>
         </Link>
       </div>

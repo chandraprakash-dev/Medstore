@@ -1,10 +1,9 @@
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
 import ShopItemCard from "../render components/ShopItemCard";
 import './Shop.css';
 
 function Shop(props) {
-  const {cartItems, shopItems} = props;
+  const {shopItems} = props;
   const [searchItems, setSearchItems] = useState([]);
 
   function search(e) {
@@ -17,27 +16,12 @@ function Shop(props) {
     return <ShopItemCard
       key={item.id}
       id={item.id}
-      values={
-        {
-          name: item.name,
-          mrp: item.mrp,
-          stock: item.stock,
-          Fact_Box: item.Fact_Box
-        }
-      }
+      item={item}
     />
   });
 
-  const links = Array.isArray(cartItems) && cartItems.length ?
-    <div className="shopLinks">
-      <Link to="/cart">
-        <button>Go to cart</button>
-      </Link>
-    </div> : null
-
   return (
     <div className="shop">
-      {links}
       <div className="search">
         <label htmlFor="search-bar">Search</label>
         <input type="text" id="search-bar" className="search-bar" onChange={search}/>
