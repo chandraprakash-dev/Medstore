@@ -3,9 +3,19 @@ import './ShopItemDetails.css';
 
 function ShopItemDetails(props) {
   const name = props.match.params.name;
-  const {shopItems} = props;
+  const [item, setItem] = useState();
+  useEffect(() => {
+    fetchItem();
 
-  let item = shopItems.find(item => item.name === name);
+  }, [])
+
+  const fetchItem = async () => {
+    const data = await fetch(`http://34.172.110.61/it-patch-mgmt/medicines/find?medicineName=${name}`);
+    const response = await data.json();
+    const item = response[0];
+    console.log(item);
+    setItem(item);
+  }
 
   const handleQuantityChange= (e) => {
     setQuantity(e.target.value);
@@ -31,21 +41,29 @@ function ShopItemDetails(props) {
            accept="image/png, image/jpeg" />
   </div>
 
-  const cartComponent = item.stock === "In Stock" ? item.prescription_required === "Prescription Required" ?
-    prescriptionComponent
-     : quantityComponent : <div>Out of stock</div>
+  if(!item) {
+    return(
+      <div>
+        <p>Loading...</p>
+      </div>
+    )
+  }
 
   return (
     <div className="details">
       <div className="heading">
-        <h3>{name}</h3>
+        <h3>{item.name}</h3>
       </div>
       <div className="price">
         <p>&#x20B9; {item.mrp}</p>
       </div>
       <p>{item.name}</p>
       <p>{item.Fact_Box}</p>
-      {cartComponent}
+      {
+        item.stock === "In Stock" ? item.prescription_required === "Prescription Required" ?
+          prescriptionComponent
+           : quantityComponent : <div>Out of stock</div>
+      }
     </div>
   )
 }
