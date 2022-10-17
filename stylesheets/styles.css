@@ -1,0 +1,22 @@
+body {
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+button:focus {
+    outline: none;
+}
