@@ -1,51 +1,40 @@
 import React, {useState, useEffect} from "react";
-import {Link} from "react-router-dom";
 import './ShopItemDetails.css';
 
 function ShopItemDetails(props) {
-  const [item, setItem] = useState();
-  useEffect(() => {
-    fetchItem();
-  }, [])
-
-  const cartItems = props.cartItems;
   const name = props.match.params.name;
+  const {shopItems} = props;
 
-  const itemIndex = cartItems.findIndex(cartItem => cartItem.name === name);
+  let item = shopItems.find(item => item.name === name);
 
   const handleQuantityChange= (e) => {
     setQuantity(e.target.value);
   }
 
   const [quantity, setQuantity] = useState(1);
-  const quantityComponent =
-    <div>
-      <label htmlFor="quantity">Quantity</label>
-      <select value={quantity} onChange={handleQuantityChange} id="quantity" name="quantity">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <button onClick={() => props.addToCart(item, quantity)}>Add to cart</button>
-    </div>
+  const quantityComponent = <div>
+    <label htmlFor="quantity">Quantity</label>
+    <select value={quantity} onChange={handleQuantityChange} id="quantity" name="quantity">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <button onClick={() => props.addToCart(item, quantity)}>Add to cart</button>
+  </div>;
 
-  const fetchItem = async () => {
-    const data = await fetch(`http://34.172.110.61/it-patch-mgmt/medicines/find?medicineName=${props.match.params.name}`);
-    const response = await data.json();
-    const item = response[0];
-    console.log(item);
-    setItem(item);
-  }
+  const prescriptionComponent = <div>
+    <label htmlFor="prescription">Select file</label>
+    <input type="file"
+           id="prescription" name="prescription"
+           accept="image/png, image/jpeg" />
+  </div>
 
-  if (!item) {
-    return (
-      <div className="details">
-        <p>Loading...</p>
-      </div>
-    )
-  }
+  const cartComponent = item.stock === "In Stock" ? item.prescription_required === "Prescription Required" ?
+    prescriptionComponent
+     : quantityComponent : <div>Out of stock</div>
+
   return (
     <div className="details">
       <div className="heading">
@@ -56,7 +45,7 @@ function ShopItemDetails(props) {
       </div>
       <p>{item.name}</p>
       <p>{item.Fact_Box}</p>
-      {quantityComponent}
+      {cartComponent}
     </div>
   )
 }

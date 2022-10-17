@@ -58,7 +58,7 @@ function App() {
         <Route path="/shop/:name" render={(props) => (
           <ShopItemDetails
             {...props}
-            cartItems={cartItems}
+            shopItems={shopItems}
             addToCart={addToCart}
           />
         )}/>
