@@ -1,10 +1,20 @@
 footer {
+    min-height: 50px;
     background: #71acf6;
-    padding: 20px;
+    display: flex;
+    color: white;
+}
+
+footer div {
+    flex: 1;
     display: flex;
     align-items: center;
-    color: white;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding: 30px 0;
+}
+
+footer .active {
+    border-top: 5px solid #ee8a91;
 }
 
 .shopHeader {
