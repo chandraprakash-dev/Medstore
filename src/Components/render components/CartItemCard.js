@@ -4,9 +4,7 @@ import './cartItemCard.css';
 function CartItemCard(props) {
   return (
     <div className="cart-card">
-      <div className="itemInfo">
-        <p>{props.values.name}</p>
-      </div>
+      <p>{props.values.name}</p>
       <p>Rs. {props.values.mrp}</p>
       <p>{props.values.quantity}</p>
       <p>{props.values.quantity * props.values.mrp}</p>

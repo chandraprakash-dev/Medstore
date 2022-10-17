@@ -6,6 +6,7 @@
 }
 
 .cartList {
+    margin-top: 20px;
 }
 
 .cart-total {
@@ -19,17 +20,15 @@
     justify-self: right;
 }
 
-.buyButton {
-    margin-top: 50px;
-    font-size: large;
-    padding: 15px;
-    border-radius: 20px;
-}
-
 .cart-empty img {
     width: 50%;
     height: auto;
     color: black;
+}
+
+.cart-empty {
+    color: #da3d4b;
+    font-size: 1.5rem;
 }
 
 @media (max-width: 800px) {

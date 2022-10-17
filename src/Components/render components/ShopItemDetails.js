@@ -43,7 +43,7 @@ function ShopItemDetails(props) {
 
   if(!item) {
     return(
-      <div>
+      <div className="details">
         <p>Loading...</p>
       </div>
     )
