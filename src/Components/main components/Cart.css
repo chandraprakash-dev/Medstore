@@ -3,7 +3,6 @@
     margin: 0 auto;
     flex: 2;
     text-align: center;
-    background: gold;
 }
 
 .cartList {
@@ -25,4 +24,19 @@
     font-size: large;
     padding: 15px;
     border-radius: 20px;
+}
+
+.cart-empty img {
+    width: 50%;
+    height: auto;
+    color: black;
+}
+
+@media (max-width: 800px) {
+    .cart-empty img {
+        margin-top: 15%;
+        width: 80%;
+        height: auto;
+        color: black;
+    }
 }

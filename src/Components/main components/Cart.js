@@ -15,9 +15,8 @@ function Cart(props) {
   if (Array.isArray(cartItems) && !cartItems.length) {
     return (
       <div className="cart cart-empty">
-        <h1>Cart is empty</h1>
-        <p>Go to shop to add items!</p>
         <img src={process.env.PUBLIC_URL + "/assets/images/empty_cart.png"} alt="empty cart"/>
+        <p>Go to shop to add items!</p>
       </div>
     )
   }
