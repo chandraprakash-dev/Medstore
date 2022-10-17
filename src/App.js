@@ -26,6 +26,11 @@ function App() {
   }
 
   const addToCart = (item, quantity) => {
+    if(document.getElementById("prescription").value == "") {
+      alert("You need to attach prescription to order this medicine");
+      return false;
+    }
+
     item.quantity = quantity;
     let newItems = cartItems.slice();
 
