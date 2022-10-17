@@ -8,10 +8,7 @@ function ShopItemCard(props) {
     fetchItem();
   }, [])
 
-  const cartItems = props.cartItems;
   const name = props.values.name;
-
-
 
   const fetchItem = async () => {
     const data = await fetch(`http://34.172.110.61/it-patch-mgmt/medicines/find?medicineName=${name}`);

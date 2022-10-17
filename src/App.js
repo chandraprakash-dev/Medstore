@@ -25,26 +25,14 @@ function App() {
     setShopItems(items)
   }
 
-  const addToCart = (id) => {
-    const shopItem = shopItems.filter(item => item.itemId === id)[0];
-
-    console.log(shopItem);
-    shopItem.quantity = 1;
-    setCartItems([...cartItems, shopItem]);
-  }
-
-  const updateCart = (index, op) => {
-    console.log('in update');
-    const newCartItems = cartItems.slice();
-    const newCartItem = newCartItems[index];
-
-    const quantity = op === '+' ? newCartItem.quantity + 1 : newCartItem.quantity - 1;
-
-    // delete item from cartItems if quantity is 0.
-    if (quantity === 0) newCartItems.splice(index, 1);
-    else newCartItem.quantity = quantity;
-
-    setCartItems(newCartItems);
+  const addToCart = (item, quantity) => {
+    item.quantity = quantity;
+    for(let i = 0; i < cartItems.length; i ++) {
+      if(item === cartItems[i]) return;
+    }
+    console.log(item);
+    setCartItems([...cartItems, item]);
+    console.log(cartItems);
   }
 
   const clearCart = () => {
@@ -53,7 +41,7 @@ function App() {
   }
 
   const cartCount = cartItems.reduce((acc, cur) => acc + cur.quantity, 0);
-  const total = cartItems.reduce((acc, cur) => acc + (cur.quantity * cur.item.cost), 0)
+  const total = cartItems.reduce((acc, cur) => acc + (cur.quantity * cur.mrp), 0)
 
   return (
     <Router>
@@ -64,9 +52,6 @@ function App() {
         <Route exact path="/shop">
           <Shop
             shopItems={shopItems}
-            cartItems={cartItems}
-            addToCart={addToCart}
-            updateCart={updateCart}
           />
         </Route>
         <Route path="/shop/:name" render={(props) => (
@@ -74,7 +59,6 @@ function App() {
             {...props}
             cartItems={cartItems}
             addToCart={addToCart}
-            updateCart={updateCart}
           />
         )}/>
         <Route path="/lab" component={Construction}/>
@@ -83,7 +67,6 @@ function App() {
           <Cart
             cartItems={cartItems}
             total={total}
-            updateCart={updateCart}
           />
         </Route>
       </Switch>

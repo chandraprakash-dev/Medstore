@@ -14,7 +14,6 @@ function Shop(props) {
   }
 
   const shopItemCards = searchItems.map(item => {
-    console.log(item);
     return <ShopItemCard
       key={item.id}
       id={item.id}
@@ -26,9 +25,6 @@ function Shop(props) {
           Fact_Box: item.Fact_Box
         }
       }
-      cartItems={cartItems}
-      updateCart={props.updateCart}
-      addToCart={props.addToCart}
     />
   });
 
@@ -45,7 +41,7 @@ function Shop(props) {
       <div className="search">
         <label htmlFor="search-bar">Search</label>
         <input type="text" id="search-bar" className="search-bar" onChange={search}/>
-        <i className="fa fa-search" aria-hidden="true"></i>
+        <i className="fa fa-search"/>
       </div>
       <div className="shopList">
         {shopItemCards}

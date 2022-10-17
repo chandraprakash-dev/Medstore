@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import CartItemCard from "../render components/CartItemCard";
 import './Cart.css'
 
@@ -9,10 +8,8 @@ function Cart(props) {
   const {cartItems} = props;
 
   const cartItemCards = cartItems.map(cartItem => <CartItemCard
-    key={cartItem.itemId}
+    key={cartItem.id}
     values={cartItem}
-    cartItems={cartItems}
-    updateCart={props.updateCart}
   />);
 
   if (Array.isArray(cartItems) && !cartItems.length) {
