@@ -1,5 +1,6 @@
 .shop-card {
-    background: skyblue;
+    background: lightpink;
+    color: #bd5f5f;
     padding: 10px;
     display: flex;
     flex-direction: column;

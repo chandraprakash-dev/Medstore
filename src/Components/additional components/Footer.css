@@ -1,15 +1,10 @@
 footer {
-    background: lightcoral;
+    background: #71acf6;
+    padding: 20px;
     display: flex;
     align-items: center;
     color: white;
     justify-content: space-between;
-}
-
-h1 {
-    font-size: 3em;
-    font-weight: normal;
-    margin: 0 0 5px 10px;
 }
 
 .shopHeader {
@@ -17,7 +12,6 @@ h1 {
 }
 
 .shopping-bag {
-    margin-right: 20px;
     position: relative;
 }
 
@@ -27,7 +21,8 @@ span {
     left: 50%;
     margin-top: -3px;
     margin-left: -4px;
-    color: #2525c4;
+    font-size: small;
+    color: black;
 }
 
 footer a {

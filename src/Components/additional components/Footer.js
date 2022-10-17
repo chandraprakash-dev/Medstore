@@ -3,28 +3,23 @@ import {Link} from "react-router-dom";
 import './Footer.css'
 
 function Footer(props) {
+
   return (
     <footer>
       <Link to="/">
-        <i className="fa fa-home fa-2x"/>
+        <i className="fa fa-home fa-2xl"/>
       </Link>
-      <div className="shopHeader">
-        <Link to="/shop">
-          <i className="fa fa-medkit fa-2x"/>
-        </Link>
-      </div>
-      <div className="lab">
-        <Link to='/lab'>
-          <i className="fa fa-flask fa-2x"/>
-        </Link>
-      </div>
-      <div className="doctor">
-        <Link to="/doctor">
-          <i className="fa fa-user-md fa-2x"/></Link>
-      </div>
+      <Link to="/shop">
+        <i className="fa-solid fa-pills fa-2xl"/>
+      </Link>
+      <Link to='/lab'>
+        <i className="fa fa-flask fa-2xl"/>
+      </Link>
+      <Link to="/doctor">
+        <i className="fa fa-user-md fa-2xl"/></Link>
       <div className="shopping-bag">
         <Link to="/cart">
-          <i className="fas fa-shopping-bag fa-2x"/>
+          <i className="fa fa-shopping-bag fa-2xl"/>
           <span>{props.cartCount}</span>
         </Link>
       </div>

@@ -2,9 +2,10 @@ import React from "react";
 import './Construction.css';
 
 function Construction() {
-  return(
+  return (
     <div className="construction">
-      <h1>Under Construction</h1>
+      <img src={process.env.PUBLIC_URL + "/assets/images/construction.png"} alt="under construction"/>
+      <p>Sorry, this service is not available yet</p>
     </div>
   )
 }
