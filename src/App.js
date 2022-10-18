@@ -16,13 +16,13 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
-    fetchItems();
+    fetchItems().then(items => setShopItems(items));
   }, [])
 
   const fetchItems = async () => {
     const data = await fetch('http://34.172.110.61/it-patch-mgmt/medicines/list');
     const items = await data.json();
-    setShopItems(items)
+    return items;
   }
 
   const addToCart = (item, quantity) => {
@@ -48,6 +48,13 @@ function App() {
 
   const cartCount = cartItems.reduce((acc, cur) => acc + +cur.quantity, 0);
   const total = cartItems.reduce((acc, cur) => acc + (cur.quantity * cur.mrp), 0)
+  if (shopItems.length === 0) {
+    return (
+      <div className="initial">
+        <p>Initializing App...</p>
+      </div>
+    )
+  }
 
   return (
     <Router>
@@ -63,7 +70,6 @@ function App() {
         <Route path="/shop/:name" render={(props) => (
           <ShopItemDetails
             {...props}
-            shopItems={shopItems}
             addToCart={addToCart}
           />
         )}/>

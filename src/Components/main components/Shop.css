@@ -1,12 +1,10 @@
 .shop {
-    flex: auto;
-    overflow-y: auto;
+    flex: 1;
 }
 
 .search {
     text-align: center;
     padding: 20px;
-    background: lightblue;
 }
 
 .search > * {
@@ -16,45 +14,34 @@
 .search-bar {
     height: 2rem;
     width: 30%;
-    border-radius: 10px;
+    border-radius: 20px;
+    border: 1px solid #a3a3a3;
+    padding-left: 20px;
+}
+
+.search-bar:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2pt #efefef;
 }
 
 .last-ordered {
-    margin: 20px auto;
+    width: 80%;
+    margin: 10px auto;
     text-align: center;
-    width: 60%;
-    height: 30%;
-}
-
-
-
-.shopLinks {
-    height: 100px;
-    text-align: center;
-}
-
-.shopLinks button {
-    height: 50px;
-    margin: 20px;
-    padding: 10px;
-    font-size: 1em;
-    font-weight: bold;
-    border-radius: 25px;
-    box-shadow: 0 0 2px 2px darkgray;
-}
-
-.shopLinks button:hover {
-    box-shadow: 0 0 5px 5px gray;
+    background: lightgrey;
 }
 
 .shopList {
-    width: 1000px;
-    background: lightgoldenrodyellow;
+    width: 80%;
     margin: 0 auto;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
+    max-height: 300px;
+    overflow: auto;
 }
+
+.last-ordered {
+
+}
+
+
 
 

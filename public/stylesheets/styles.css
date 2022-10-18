@@ -21,3 +21,10 @@ button {
 button:focus {
     outline: none;
 }
+
+.initial {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

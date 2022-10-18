@@ -4,11 +4,18 @@ import './Shop.css';
 
 function Shop(props) {
   const {shopItems} = props;
+  console.log(shopItems);
   const [searchItems, setSearchItems] = useState([]);
 
   function search(e) {
     const {value} = e.target;
+    console.log(value, !value);
+    if (!value) {
+      setSearchItems([]);
+      return;
+    }
     const searchItems = shopItems.filter(item => item.name.toLowerCase().includes(value.toLowerCase()));
+    console.log(shopItems);
     setSearchItems(searchItems);
   }
 
@@ -25,10 +32,6 @@ function Shop(props) {
       <div className="search">
         <label htmlFor="search-bar">Search</label>
         <input type="text" id="search-bar" className="search-bar" onChange={search}/>
-        <i className="fa fa-search"/>
-      </div>
-      <div className="shopList">
-        {shopItemCards}
       </div>
       <div className="last-ordered">
         <p>Previous orders</p>
@@ -37,6 +40,9 @@ function Shop(props) {
           <p>Order 1</p>
           <p>Order 1</p>
         </div>
+      </div>
+      <div className="shopList">
+        {shopItemCards}
       </div>
     </div>
   )
