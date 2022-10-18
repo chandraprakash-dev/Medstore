@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9f9ea37f15eb204dfdb3840a2301dfae",
+    "revision": "cc5cb7461da15ec2af0fc79199e1e42c",
     "url": "/Medstore/index.html"
   },
   {
-    "revision": "e0d38b1e2f9c18c5195f",
-    "url": "/Medstore/static/css/main.ae697cdb.chunk.css"
+    "revision": "20522d13e2306f7a673e",
+    "url": "/Medstore/static/css/main.2900b5e2.chunk.css"
   },
   {
     "revision": "4b2eb62a2c842f16b3aa",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Medstore/static/js/2.9ad06baf.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e0d38b1e2f9c18c5195f",
-    "url": "/Medstore/static/js/main.e5fae18b.chunk.js"
+    "revision": "20522d13e2306f7a673e",
+    "url": "/Medstore/static/js/main.79fd5d79.chunk.js"
   },
   {
     "revision": "bb4cdbef2f0fd7578733",

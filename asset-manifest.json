@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Medstore/static/css/main.ae697cdb.chunk.css",
-    "main.js": "/Medstore/static/js/main.e5fae18b.chunk.js",
-    "main.js.map": "/Medstore/static/js/main.e5fae18b.chunk.js.map",
+    "main.css": "/Medstore/static/css/main.2900b5e2.chunk.css",
+    "main.js": "/Medstore/static/js/main.79fd5d79.chunk.js",
+    "main.js.map": "/Medstore/static/js/main.79fd5d79.chunk.js.map",
     "runtime-main.js": "/Medstore/static/js/runtime-main.04ae6399.js",
     "runtime-main.js.map": "/Medstore/static/js/runtime-main.04ae6399.js.map",
     "static/js/2.9ad06baf.chunk.js": "/Medstore/static/js/2.9ad06baf.chunk.js",
     "static/js/2.9ad06baf.chunk.js.map": "/Medstore/static/js/2.9ad06baf.chunk.js.map",
     "index.html": "/Medstore/index.html",
-    "precache-manifest.5469f8bcea50726301df9035625a7d61.js": "/Medstore/precache-manifest.5469f8bcea50726301df9035625a7d61.js",
+    "precache-manifest.c3f30c546e6fab25e5e053dfd0fc625d.js": "/Medstore/precache-manifest.c3f30c546e6fab25e5e053dfd0fc625d.js",
     "service-worker.js": "/Medstore/service-worker.js",
-    "static/css/main.ae697cdb.chunk.css.map": "/Medstore/static/css/main.ae697cdb.chunk.css.map",
+    "static/css/main.2900b5e2.chunk.css.map": "/Medstore/static/css/main.2900b5e2.chunk.css.map",
     "static/js/2.9ad06baf.chunk.js.LICENSE.txt": "/Medstore/static/js/2.9ad06baf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.04ae6399.js",
     "static/js/2.9ad06baf.chunk.js",
-    "static/css/main.ae697cdb.chunk.css",
-    "static/js/main.e5fae18b.chunk.js"
+    "static/css/main.2900b5e2.chunk.css",
+    "static/js/main.79fd5d79.chunk.js"
   ]
 }
