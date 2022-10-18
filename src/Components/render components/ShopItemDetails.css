@@ -1,5 +1,22 @@
 .details {
-    flex: 2;
-    margin: 20% auto;
-    text-align: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.medicine-card {
+    padding: 20px;
+    box-shadow: 0 0 5px 2px #a7a7a7;
+
+}
+
+.medicine-card > * {
+    margin: 20px 5px;
+}
+
+.name {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dddddd;
+}
+

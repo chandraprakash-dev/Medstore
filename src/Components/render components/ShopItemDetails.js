@@ -17,12 +17,12 @@ function ShopItemDetails(props) {
     setItem(item);
   }
 
-  const handleQuantityChange= (e) => {
+  const handleQuantityChange = (e) => {
     setQuantity(e.target.value);
   }
 
   const [quantity, setQuantity] = useState(1);
-  const cartComponent = <div>
+  const cartComponent = <>
     <label htmlFor="quantity">Quantity</label>
     <select value={quantity} onChange={handleQuantityChange} id="quantity" name="quantity">
       <option value="1">1</option>
@@ -31,18 +31,18 @@ function ShopItemDetails(props) {
       <option value="4">4</option>
       <option value="5">5</option>
     </select>
-    <button type="submit" onClick={() => props.addToCart(item, quantity) }>Add to cart</button>
-  </div>;
+    <button type="submit" onClick={() => props.addToCart(item, quantity)}>Add to cart</button>
+  </>;
 
-  const prescriptionComponent = <div>
-    <label htmlFor="prescription">Select file</label>
+  const prescriptionComponent = <>
+    <p>Prescription is required for this medicine</p>
     <input type="file"
            id="prescription" name="prescription"
-           accept="image/png, image/jpeg" />
-  </div>
+           accept="image/png, image/jpeg"/>
+  </>
 
-  if(!item) {
-    return(
+  if (!item) {
+    return (
       <div className="details">
         <p>Loading...</p>
       </div>
@@ -51,22 +51,19 @@ function ShopItemDetails(props) {
 
   return (
     <div className="details">
-      <div className="heading">
-        <h3>{item.name}</h3>
+      <div className="medicine-card">
+        <h3 className="name">{item.name}</h3>
+        <p>Details: {item.Fact_Box}</p>
+        <p>MRP: &#x20B9; {item.mrp}</p>
+        {
+          item.stock === "In Stock" ? item.prescription_required === "Prescription Required" ?
+            <>
+              {prescriptionComponent}
+              {cartComponent}
+            </>
+            : cartComponent : <div>Out of stock</div>
+        }
       </div>
-      <div className="price">
-        <p>&#x20B9; {item.mrp}</p>
-      </div>
-      <p>{item.name}</p>
-      <p>{item.Fact_Box}</p>
-      {
-        item.stock === "In Stock" ? item.prescription_required === "Prescription Required" ?
-          <div>
-            {prescriptionComponent}
-            {cartComponent}
-          </div>
-           : cartComponent : <div>Out of stock</div>
-      }
     </div>
   )
 }

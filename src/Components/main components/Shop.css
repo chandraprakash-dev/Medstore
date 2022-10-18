@@ -21,7 +21,7 @@
 
 .search-bar:focus {
     outline: none;
-    box-shadow: 0 0 5px 2pt #efefef;
+    box-shadow: 0 0 5px 2px #efefef;
 }
 
 .last-ordered {
