@@ -9,7 +9,7 @@ h2 {
     text-align: center;
 }
 
-.active-transactions {
+.transactions {
     margin: 20px auto;
     max-width: 300px;
     padding: 10px;
@@ -17,7 +17,7 @@ h2 {
     box-shadow: 0 0 5px 2px #a7a7a7;
 }
 
-.active-transactions .heading {
+.transactions .heading {
     background: #da3d4b;
     color: white;
     padding: 10px;

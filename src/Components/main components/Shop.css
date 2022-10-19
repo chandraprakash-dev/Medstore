@@ -1,5 +1,7 @@
 .shop {
-    flex: 1;
+    flex: auto;
+    overflow-y: auto;
+    position: relative;
 }
 
 .search {
@@ -33,14 +35,14 @@
 
 .shopList {
     width: 80%;
-    margin: 0 auto;
     max-height: 300px;
     overflow: auto;
+    background: white;
+    position: absolute;
+    top: 80px;
+    left: 10%;
 }
 
-.last-ordered {
-
-}
 
 
 

@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import ShopItemCard from "../render components/ShopItemCard";
 import './Shop.css';
+import OrderCard from "../render components/OrderCard";
 
 function Shop(props) {
   const {shopItems} = props;
@@ -27,18 +28,19 @@ function Shop(props) {
     />
   });
 
+  const {orders} = props;
+  const orderCards = orders.map(order => <OrderCard key={order.orderId} order={{id:order.orderId, list: order.medicineList}}/>)
+
   return (
     <div className="shop">
       <div className="search">
         <label htmlFor="search-bar">Search</label>
         <input type="text" id="search-bar" className="search-bar" onChange={search}/>
       </div>
-      <div className="last-ordered">
-        <p>Previous orders</p>
-        <div className="latest-orders">
-          <p>Order 1</p>
-          <p>Order 1</p>
-          <p>Order 1</p>
+      <div className="transactions">
+        <p className="heading">Previous orders</p>
+        <div className="transactions-list">
+          {orderCards}
         </div>
       </div>
       <div className="shopList">

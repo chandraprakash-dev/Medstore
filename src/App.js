@@ -88,6 +88,7 @@ function App() {
         <Route exact path="/shop">
           <Shop
             shopItems={shopItems}
+            orders={orders}
           />
         </Route>
         <Route path="/shop/:name" render={(props) => (

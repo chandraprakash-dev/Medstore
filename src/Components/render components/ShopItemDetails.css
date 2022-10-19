@@ -15,6 +15,16 @@
     margin: 20px 5px;
 }
 
+button[type="submit"] {
+    padding: 8px;
+    border-radius: 15px;
+}
+
+button[type="submit"]:hover {
+    background: #71acf6;
+    color: white;
+}
+
 .name {
     padding-bottom: 10px;
     border-bottom: 2px solid #dddddd;
