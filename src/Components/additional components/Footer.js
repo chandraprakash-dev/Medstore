@@ -10,7 +10,6 @@ function Footer(props) {
     const footer = target.closest('footer');
 
     const curdiv = footer.querySelector('.active');
-    console.log(curdiv);
     curdiv.classList.remove('active');
 
     div.classList.add('active');

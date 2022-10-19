@@ -14,10 +14,24 @@ import ShopItemDetails from "./Components/render components/ShopItemDetails";
 function App() {
   const [shopItems, setShopItems] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  const [orders, setOrders] = useState([]);
 
   useEffect(() => {
     fetchItems().then(items => setShopItems(items));
+    fetchOrders().then(orders => setOrders(orders));
   }, [])
+
+  const fetchOrders = async () => {
+    const data = await fetch('http://34.172.110.61/it-patch-mgmt/order/get-orders');
+    let orders = await data.json();
+    orders = orders.filter(order => order.medicineList.length > 0)
+    let count = 1;
+    orders.forEach(order => {
+      order.orderId = count++;
+    });
+    orders.pop();
+    return orders;
+  }
 
   const fetchItems = async () => {
     const data = await fetch('http://34.172.110.61/it-patch-mgmt/medicines/list');
@@ -26,7 +40,7 @@ function App() {
   }
 
   const addToCart = (item, quantity) => {
-    if(document.getElementById("prescription").value == "") {
+    if (document.getElementById("prescription").value == "") {
       alert("You need to attach prescription to order this medicine");
       return false;
     }
@@ -35,20 +49,21 @@ function App() {
     let newItems = cartItems.slice();
 
     let flag = false;
-    for(let i = 0; i < newItems.length; i ++) {
-      if(item.id === newItems[i].id) {
+    for (let i = 0; i < newItems.length; i++) {
+      if (item.id === newItems[i].id) {
         newItems[i].quantity = quantity;
         flag = true;
         break;
       }
     }
-    if(!flag)  newItems.push(item);
+    if (!flag) newItems.push(item);
     setCartItems(newItems);
   }
 
   const cartCount = cartItems.reduce((acc, cur) => acc + +cur.quantity, 0);
   const total = cartItems.reduce((acc, cur) => acc + (cur.quantity * cur.mrp), 0)
-  if (shopItems.length === 0) {
+
+  if (shopItems.length === 0 || orders.length === 0) {
     return (
       <div className="initial">
         <p>Initializing App...</p>
@@ -58,10 +73,18 @@ function App() {
 
   return (
     <Router>
-      <Header />
+      <Header/>
       <Switch>
-        <Route exact path="/" component={Dashboard}/>
-        <Route path="/Medstore" component={Dashboard}/>
+        <Route exact path="/">
+          <Dashboard
+            orders={orders}
+          />
+        </Route>
+        <Route exact path="/Medstore">
+          <Dashboard
+            orders={orders}
+          />
+        </Route>
         <Route exact path="/shop">
           <Shop
             shopItems={shopItems}

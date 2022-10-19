@@ -1,0 +1,25 @@
+.order-card {
+    margin-bottom: 5px;
+    border-bottom: 2px solid #d5d5d5;
+}
+
+.order-id {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.medicine > * {
+    padding: 5px;
+}
+
+th,td {
+    padding: 5px;
+}
+
+th {
+    text-align: left;
+}
+
+td.quantity {
+    text-align: center;
+}
